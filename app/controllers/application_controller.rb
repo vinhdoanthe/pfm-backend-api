@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::API
   before_action :authenticate_request
   attr_reader :current_user
+  
+  def auto_login
+    render json: current_user
+  end
 
   private
   
